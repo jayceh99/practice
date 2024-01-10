@@ -5,10 +5,10 @@ import time
 driver = webdriver.Chrome()
 
 driver.get("https://irs.thsrc.com.tw/IMINT/")
-driver.find_element(by=By.ID , value='cookieAccpetBtn').click()
+driver.find_element(By.CSS_SELECTOR , value='#cookieAccpetBtn').click()
 time.sleep(2)
-driver.find_element(By.XPATH, value="//input[@type='text'] ").click()
+driver.find_element(By.XPATH, value="//input[@readonly='readonly'] ").click()
 time.sleep(2)
-driver.find_element(By.CSS_SELECTOR, ".open .dayContainer:nth-child(1) > .flatpickr-day:nth-child(12)").click()
-time.sleep(10)
+driver.find_element(By.XPATH, value='//span[@aria-label="一月 31, 2024"]').click()
+time.sleep(2)
   
